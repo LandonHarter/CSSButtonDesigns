@@ -1,0 +1,166 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+
+button {
+    margin: 1rem;
+    font-weight: bold;
+    color: #222;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Button Outline Animation */
+.buttonanimation1 {
+    width: 300px;
+    height: 60px;
+    font-size: 25px;
+}
+.buttonanimation1.buttonanimation1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: 3px solid #0AF;
+    transition: top, left, right, bottom, /* Transition time in ms */ 250ms ease-in-out;
+}
+.buttonanimation1.buttonanimation1:hover::before {
+    /* Outline Width * -2 */
+    top: -6px;
+    bottom: -6px;
+    left: -6px;
+    right: -6px;
+}
+
+/* Background Slide Animation */
+.buttonanimation2 {
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+
+    background-color: #E3E3E3;
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+}
+.buttonanimation2.buttonanimation2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0AF;
+
+    transition: transform /* Transition time in ms */ 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left; /* Origin of the slide */
+}
+.buttonanimation2.buttonanimation2:hover {
+    color: white;
+}
+.buttonanimation2.buttonanimation2:hover::before {
+    transform: scaleX(1);
+}
+
+/* Background Circle Cover Animation */
+.buttonanimation3 {
+    width: 300px;
+    height: 60px;
+    font-size: 23px;
+
+    z-index: 1;
+    overflow: hidden;
+    background-color: #0AF;
+    transition: color 500ms ease-in-out;
+}
+.buttonanimation3.buttonanimation3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: #E3E3E3;
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+    transform: scale(1.5);
+}
+.buttonanimation3.buttonanimation3:hover::before {
+    transform: scale(0);
+}
+.buttonanimation3.buttonanimation3:hover {
+    color: white;
+}
+
+/* Background Circle Cover Animation 2 */
+.buttonanimation4 {
+    width: 300px;
+    height: 60px;
+    font-size: 21px;
+
+    z-index: 1;
+    overflow: hidden;
+    background-color: #E3E3E3;
+    transition: color 500ms ease-in-out;
+}
+.buttonanimation4.buttonanimation4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: #0AF;
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+    transform: scale(0);
+}
+.buttonanimation4.buttonanimation4:hover::before {
+    transform: scale(1.5);
+}
+.buttonanimation4.buttonanimation4:hover {
+    color: white;
+}
+
+/* Underline Animation */
+.buttonanimation5.buttonanimation5 {
+    width: 300px;
+    height: 60px;
+    font-size: 25px;
+    z-index: 1;
+}
+.buttonanimation5.buttonanimation5::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    z-index: -1;
+
+    transform: scaleX(0);
+    transition: transform 500ms ease-in-out;
+    background-color: #0AF;
+}
+.buttonanimation5.buttonanimation5:hover::before {
+    transform: scaleX(1);
+}
