@@ -1,2 +1,2 @@
-# CSSButtonDesigns
+# CSS Button Animations and Designs
 Some simple button animations for your website.
